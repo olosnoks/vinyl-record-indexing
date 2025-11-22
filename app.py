@@ -137,7 +137,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         i = futures[future]
         results.append(future.result())
 
-with open("results.csv", "w") as csvfile:
+with open("output.csv", "w") as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=["artist", "album"])
     writer.writeheader()
     writer.writerows(results)
