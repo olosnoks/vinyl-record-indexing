@@ -11,13 +11,13 @@ import csv
 import requests
 
 # -- Model selection --
-LMSTUDIO_MODEL = "llava-v1.5-7b"  # Set to "llava-v1.5-13b" or "llava-v1.5-7b" as needed
+LMSTUDIO_MODEL = "llava-llama-3-8b-v1_1"  # Set to "llava-v1.5-13b" or "llava-v1.5-7b" as needed
 
 results = []
 labels = ["vinyl record", "something else", "open palm"]
 
 model, _, preprocess = mobileclip.create_model_and_transforms(
-    "mobileclip2_l14", pretrained="../ml-mobileclip/models/MobileCLIP2-L-14/mobileclip2_l14.pt"
+    "mobileclip_s0", pretrained="../ml-mobileclip/models/MobileCLIP-S0/mobileclip_s0.pt"
 )
 tokenizer = mobileclip.get_tokenizer("mobileclip_s0")
 text = tokenizer(labels)
